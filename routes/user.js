@@ -7,6 +7,10 @@ const { saveRedirectUrl } = require("../middleware.js");
 
 const userController = require("../controllers/users.js");
 
+router.get("/", (req,res)=>{  //redirect route
+    res.redirect("listings")
+});
+
 router.route("/signup")
 .get(userController.renderSignupForm)
 .post(wrapAsync(userController.signup));
@@ -22,5 +26,6 @@ router.route("/login")
 );
 
 router.get("/logout", userController.logout);
+
 
 module.exports = router;

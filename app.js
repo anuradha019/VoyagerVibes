@@ -21,7 +21,8 @@ const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 
 
-const dbUrl = process.env.ATLASDB_URL;
+ const dbUrl = process.env.ATLASDB_URL;
+// const dbUrl ="mongodb://127.0.0.1:27017/VoyagerVibes";
 
 main()
 	.then(() => {
@@ -67,9 +68,9 @@ const sessionOptions = {
 	},
 };
 
-// app.get("/", (req, res) => {
-//     res.send("Hi I'am root");
-// });
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
 
 
 
@@ -108,11 +109,11 @@ app.all("*", (req, res, next) => {
 	next(new ExpressError(404, "Page Not Found!"));
 });
 
-// app.use((err, req, res, next) => {
-// 	let { statusCode = 500, message = "Something went wrong!" } = err;
-// 	res.status(statusCode).render("error.ejs", { message });
-// 	// res.status(statusCode).send(message);
-// });
+app.use((err, req, res, next) => {
+	let { statusCode = 500, message = "Something went wrong!" } = err;
+	res.status(statusCode).render("error.ejs", { message });
+	// res.status(statusCode).send(message);
+});
 
 app.listen(8080, () => {
 	console.log("server is listening to port 8080");

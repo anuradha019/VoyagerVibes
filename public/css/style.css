@@ -62,6 +62,13 @@ body {
     border: none !important;
     margin-bottom: 2rem;
 }
+.list-card a {
+    color: black;
+}
+
+.list-card a:hover {
+    color: black;
+}
 
 .card-img-top {
     border-radius: 1rem !important;

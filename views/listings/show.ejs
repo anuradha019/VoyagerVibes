@@ -113,12 +113,22 @@
   </div>
   <% } %>
   </div>
-  <div class="col-6 offset-3 mb-3">
-    <h4>Where you'll be</h4>
-    <div id="map"></div>
- </div>
+   <!-- Load the `mapbox-gl-geocoder` plugin. -->
+   <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+   <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+   <div class="col-8 offset-2 mapImg">
+       <p><b>Where you'll be &nbsp;<i class="fa-solid fa-location-crosshairs"></i></p></b>
+       <div id="map" style="position: relative;">
+           <div class="map-zoom-icon">
+               <div class="icon icon-plus" onclick="zoomin()"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+               <div class="icon icon-min" onclick="zoomout()"><i class="fa-solid fa-magnifying-glass-minus"></i></div>
+           </div>
+           <div class="anuradha"><a href="https://github.com/anuradha019">Anu GitHub</a></div>
+       </div>
+   </div>
 </div>
-
+</div>
 <script src="/js/map.js"></script>
+<script src="/js/delete-confirm.js"></script>
 
 
